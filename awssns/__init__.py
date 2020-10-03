@@ -43,6 +43,7 @@ def create_app(test_config=None):
                     messageCreatedAt=int(time.time()),
                 )
             sns_message = Message(json.dumps(data)).route()
+            print(f"sns message {sns_message}")
             return "Test SNS"
 
     return app
